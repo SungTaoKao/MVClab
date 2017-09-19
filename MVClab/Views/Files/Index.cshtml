@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    String[] array = ViewBag.fileArray;
+}
+
+<h2>Index</h2>
+    <ul>
+    @{ 
+        foreach(var file in array)
+        {
+            string name = "" + Path.GetFileNameWithoutExtension(file);
+            <li>
+                @Html.ActionLink(name, "Content", new { id = @name })
+            </li>
+        }
+    }
+       
+    </ul>
+        
+   
+
+
